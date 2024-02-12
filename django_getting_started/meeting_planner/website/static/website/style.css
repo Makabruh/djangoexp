@@ -1,0 +1,12 @@
+body {
+    font-family: sans-serif;
+    color: lightslategray;
+    background-color: whitesmoke;
+}
+
+img {
+    border-radius: 50%;
+    width: 10%;
+    float: right;
+    margin-right: 2%;
+  }
