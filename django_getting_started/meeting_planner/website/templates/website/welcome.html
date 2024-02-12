@@ -9,8 +9,15 @@
         <p>
             This is a beginner demo project for learning <em>Django</em>.
         </p>
-        <p>
-            There are currently {{num_meetings}} meetings in the database.
-        </p>
+        <h2>Meetings:</h2>
+        <ul>
+            {% for meeting in meetings %}
+                <li>
+                    <a href="/meetings/{{meeting.id}}">
+                        {{meeting.title}}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
     </body>
 </html>
