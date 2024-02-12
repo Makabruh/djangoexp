@@ -7,6 +7,13 @@ body {
     background-color: whitesmoke;
 }
 
+h1 {
+    color: rgb(60, 69, 78);
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 3rem;
+}
+
 img {
     border-radius: 50%;
     width: 10%;
@@ -15,10 +22,10 @@ img {
 }
 
 form {
-    padding-top: 20%;
     margin: auto 2rem;
     background-color: gainsboro;
     padding: 2rem;
+    padding-top: 4rem;
     border-radius: 1rem;
     box-shadow: lightblue 0px 6px;
     text-align: left!important;
@@ -29,8 +36,10 @@ input{
     border: 1px solid #ced4da;
     line-height: 1.5;
     color: #495057;
-    width: 70%; 
+    width: 98%;
     /* margin-top: 7px 10px 5px auto; */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     padding: 7px;
     font-size: 1rem;
     /* display: block; */
