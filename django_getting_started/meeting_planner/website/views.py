@@ -15,6 +15,3 @@ def date(request):
 def about(request):
     return HttpResponse("Hello I'm here")
 
-def rooms(request):
-    return render(request, "website/room_detail.html",
-                  {"rooms": Room.objects.all()})
