@@ -7,7 +7,7 @@ class Room(models.Model):
     room_number = models.IntegerField()
 
     def __str__(self):
-        return f"{self.name} is Room {self.room_number} on Floor {self.floor_number}"
+        return f"{self.name} (which is Room {self.room_number} on Floor {self.floor_number})"
     
 class Meeting(models.Model):
     #The database fields
@@ -22,4 +22,4 @@ class Meeting(models.Model):
     #Needed double underscores here
     #Displays friendly titles in the admin interface
     def __str__(self):
-        return f"{self.title} at {self.start_time} on {self.date}"
+        return f"{self.title} at {self.start_time} on {self.date} with ID: {self.id}"
