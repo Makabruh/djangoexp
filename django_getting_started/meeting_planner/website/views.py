@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
 from meetings.models import Meeting
+from meetings.models import Room
 
 def welcome(request):
     return render(request, "website/welcome.html",
@@ -13,3 +14,7 @@ def date(request):
 
 def about(request):
     return HttpResponse("Hello I'm here")
+
+def rooms(request):
+    return render(request, "website/room_detail.html",
+                  {"rooms": Room.objects.all()})

@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from website.views import welcome, date, about
+from website.views import welcome, date, about, rooms
 from meetings.views import detail
 
 urlpatterns = [
@@ -25,4 +25,5 @@ urlpatterns = [
     path('', welcome, name="home"),
     path('about', about, name="about"),
     path('meetings/<int:id>', detail, name="detail"),
+    path('rooms', rooms, name='rooms'),
 ]
