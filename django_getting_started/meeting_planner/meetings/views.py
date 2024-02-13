@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.forms import modelform_factory
 from .models import Meeting, Room
 
@@ -11,10 +11,18 @@ def rooms(request):
     return render(request, "meetings/room_detail.html",
                   {"rooms": Room.objects.all()})
 
+
 MeetingForm = modelform_factory(Meeting, exclude=[])
 #This is a class that will generate a form for creating a new meeting
 
 def new(request):
-    form = MeetingForm()
+    if request.method == "POST":
+        #Form has been submitted by pressing button
+        form = MeetingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("home")
+    else:   
+        form = MeetingForm()
     return render(request, "meetings/new.html",
-                  {"form": form})
+                    {"form": form})
