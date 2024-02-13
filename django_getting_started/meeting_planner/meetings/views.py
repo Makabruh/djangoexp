@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.forms import modelform_factory
+#from django.forms import modelform_factory
+
 from .models import Meeting, Room
+from .forms import MeetingForm
 
 def detail(request, id):
     meeting = get_object_or_404(Meeting, pk=id)
@@ -12,7 +14,7 @@ def rooms(request):
                   {"rooms": Room.objects.all()})
 
 
-MeetingForm = modelform_factory(Meeting, exclude=[])
+#MeetingForm = modelform_factory(Meeting, exclude=[])
 #This is a class that will generate a form for creating a new meeting
 
 def new(request):
